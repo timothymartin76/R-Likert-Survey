@@ -24,3 +24,4 @@ lgood
 summary(lgood)
 plot(lgood)
 plot(lgood, include.histogram=TRUE)
+plot(lgood, type = "heat")
