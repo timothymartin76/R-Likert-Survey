@@ -6,7 +6,7 @@ mylevels <- c('Strongly Disagree', 'Disagree', 'Neither Agree nor Disagree', 'Ag
 items3 <- mydata[,substr(names(mydata), 1,2) == 'QA']
 head(items3); ncol(items3)
 str(items3)
-groups <- Department(c('Operations','Support'), 292, replace=TRUE)
+
 tryCatch({
 # This will throw an error because all the items must have the same number of levels.
 lbad <- likert(items3)
@@ -22,6 +22,16 @@ items3[,i] <- factor(items3[,i], levels=mylevels)
 lgood <- likert(items3)
 lgood
 summary(lgood)
-plot(lgood)
-plot(lgood, include.histogram=TRUE)
-plot(lgood, type = "heat")
+plot(lgood)  ## diverging bar chart
+plot(lgood, include.histogram=TRUE)  ## with histogram
+plot(lgood, type = "heat")  ## heatmap
+plot(lgood, centered = FALSE, wrap = 30)  ## Centered bar chart 
+
+Grouped <- likert(items3, grouping = mydata$Department)  ##Grouping by Department
+print(Grouped)
+summary(Grouped)
+plot(Grouped)  ## diverging grouped bar chart
+plot(Grouped, include.histogram = TRUE)  ## with histogram
+
+
+
