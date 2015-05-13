@@ -14,7 +14,7 @@ lbad <- likert(items3)
 print("This is good that an error was thrown!")
 print(e)
 })
-sapply(items, class) #Verify that all the columns are indeed factors
+sapply(items3, class) #Verify that all the columns are indeed factors
 sapply(items3, function(x) { length(levels(x)) } ) # The number of levels in each factor
 for(i in seq_along(items3)) {
 items3[,i] <- factor(items3[,i], levels=mylevels)
