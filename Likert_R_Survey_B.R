@@ -33,5 +33,16 @@ summary(Grouped)
 plot(Grouped)  ## diverging grouped bar chart
 plot(Grouped, include.histogram = TRUE)  ## with histogram
 
+###### Customizing Grouped Chart using ggplot themes
+
+plot(Grouped, text.size=5, text.color="black", high.color = "#4A6491", low.color = "#FF9800") +  
+theme(axis.text.x=element_text(colour="black", face="bold", size=13), 
+axis.text.y=element_text(colour="black", face="bold", size=13), 
+axis.title.x=element_text(colour="black", face="bold", size=13), 
+strip.text=element_text(colour="black", face="bold", size=13), 
+legend.text=element_text(colour="black", face="bold", size=13), 
+legend.title=element_text(colour="black", face="bold", size=13), 
+plot.title=element_text(colour="black", face="bold", size=13)) + 
+ggtitle("My Chart Title")
 
 
